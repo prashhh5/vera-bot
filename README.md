@@ -1,8 +1,8 @@
-# Vera AI Challenge — Submission
+# Vera AI Challenge submission
 
 ## What this bot does
 
-Vera-Submit is a 4-context WhatsApp message composer built around Magicpin's engagement framework. It takes a CategoryContext, MerchantContext, TriggerContext, and optional CustomerContext, then composes a specific, data-anchored WhatsApp message for the merchant.
+Vera Submit is a 4 context WhatsApp message composer built around Magicpin's engagement framework. It takes a CategoryContext, MerchantContext, TriggerContext, and optional CustomerContext, then composes a specific, data-anchored WhatsApp message for the merchant.
 
 The core design decision was to keep the LLM prompt as data-dense as possible: every context field that contains a real number gets passed directly into the prompt, and the system prompt explicitly bans fabrication. The framing dictionary in bot.py dispatches to a different composition strategy for each of the 24 trigger kinds — so a perf_dip message opens with the exact delta before suggesting fixes, while a recall_due message names the patient and embeds the slot options from the payload.
 
